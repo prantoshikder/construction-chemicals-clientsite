@@ -3,24 +3,50 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand: #f47b20;
+  --brand-dark: #d56a18;
+  --ink: #1a2233;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html,
+body {
+  background: #fff;
+  color: var(--ink);
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8;
+  }
+  .btn-brand {
+    @apply inline-flex items-center justify-center rounded-sm bg-brand px-5 py-2.5 text-xs font-semibold uppercase tracking-wide text-white transition-colors hover:bg-brand-dark sm:px-6 sm:py-3 sm:text-sm;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-sm border-2 border-white px-5 py-2.5 text-xs font-semibold uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-ink sm:px-6 sm:py-3 sm:text-sm;
+  }
+  .section {
+    @apply py-12 sm:py-16 md:py-20;
+  }
+  .section-title {
+    @apply text-2xl font-bold uppercase tracking-tight text-ink sm:text-3xl md:text-4xl;
+  }
+  .section-sub {
+    @apply mt-2 text-sm text-ink-mute sm:text-base;
+  }
+  .title-bar::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--brand);
+    margin: 14px auto 0;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
+  .bg-overlay {
+    background: linear-gradient(rgba(10, 18, 35, 0.65), rgba(10, 18, 35, 0.65));
+  }
   .text-balance {
     text-wrap: balance;
   }

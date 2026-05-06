@@ -9,8 +9,30 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        brand: {
+          DEFAULT: "#f47b20",
+          dark: "#d56a18",
+          light: "#ff9648",
+        },
+        ink: {
+          DEFAULT: "#1a2233",
+          soft: "#3a4458",
+          mute: "#6b7280",
+        },
+      },
+      fontFamily: {
+        sans: ["var(--font-poppins)", "system-ui", "sans-serif"],
+        heading: ["var(--font-poppins)", "system-ui", "sans-serif"],
+      },
+      container: {
+        center: true,
+        padding: "1rem",
+        screens: {
+          sm: "640px",
+          md: "768px",
+          lg: "1024px",
+          xl: "1200px",
+        },
       },
     },
   },
